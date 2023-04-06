@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/stats/total", "dest": "/index.html" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
