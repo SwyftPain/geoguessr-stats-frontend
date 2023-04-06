@@ -27,7 +27,9 @@ function Table (props: SearchProps) {
     }
   }, [])
 
-  const fetchData = useCallback(async () => {
+  const fetchData = useCallback( async () =>
+  {
+    useMemo(async () => {
     try {
       const response = await fetch('https://express-backend.vercel.app/api/getstats')
       const data = await response.json()
@@ -43,7 +45,7 @@ function Table (props: SearchProps) {
           acc[row.user].losses += row.losses
         }
         return acc
-      }, {})
+      }, {} )
 
       const userStatsArray = Object.values(userStats)
 
@@ -52,7 +54,8 @@ function Table (props: SearchProps) {
       setLoading(false)
     } catch (error) {
       console.log('Error', error)
-    }
+      }
+    }, [])
   }, [])
 
   useEffect(() => {
