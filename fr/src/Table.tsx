@@ -131,11 +131,11 @@ function Table (props: SearchProps) {
               </tr>
             </tfoot>
           </table>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onChangePage={handlePageClick}
-          />
+            { searchValue.length < 1 && <Pagination
+              currentPage={ currentPage }
+              totalPages={ totalPages }
+              onChangePage={ handlePageClick }
+            /> }
         </>
       ) : (
         <p>No results!</p>
