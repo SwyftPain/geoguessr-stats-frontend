@@ -1,2 +1,2 @@
 # ktl
- FrontendForGeoGuessr
+ frontend
