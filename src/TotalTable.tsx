@@ -112,10 +112,6 @@ function Table (props: SearchProps) {
               </tr>
               <tr>
                 <th className='descending'>
-                  <i className='normal blue calendar icon'></i>{' '}
-                  {isMobile ? 'D/T' : 'Date/Time'}:
-                </th>
-                <th className='descending'>
                   <i className='normal green checkmark icon'></i>{' '}
                   {isMobile ? 'W' : 'Wins'}:
                 </th>
@@ -129,7 +125,6 @@ function Table (props: SearchProps) {
               {(searchValue ? filteredResults : currentResults).map(row => (
                 <tr key={row.id}>
                   <td>{row.user}</td>
-                  <td>{howLongAgo(row.date)}</td>
                   <td>{row.wins}</td>
                   <td>{row.losses}</td>
                 </tr>
