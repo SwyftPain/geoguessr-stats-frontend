@@ -56,17 +56,18 @@ function Table (props: SearchProps) {
       }
   }, [])
 
-  useEffect(() => {
-    fetchData()
-    const intervalId = setInterval(async () => {
+useEffect(() => {
+  fetchData()
+  setInterval(() => {
+    useMemo(async () => {
       try {
         await fetchData()
       } catch (error) {
         console.log('Error', error)
       }
-    }, 60000)
-    return () => clearInterval(intervalId)
-  }, [fetchData])
+    }, [fetchData])
+  }, 60000)
+}, [fetchData])
 
   const filteredResults = useMemo(() => {
     return results.filter(row => {

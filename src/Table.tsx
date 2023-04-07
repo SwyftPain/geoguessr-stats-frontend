@@ -42,14 +42,15 @@ function Table (props: SearchProps) {
 
   useEffect(() => {
     fetchData()
-    const intervalId = setInterval(async () => {
+    setInterval(() => {
+    useMemo(async () => {
       try {
         await fetchData()
       } catch (error) {
         console.log('Error', error)
       }
+    }, [ fetchData ] )
     }, 60000)
-    return () => clearInterval(intervalId)
   }, [fetchData])
 
   results.forEach((row: mysql.RowDataPacket) => {
