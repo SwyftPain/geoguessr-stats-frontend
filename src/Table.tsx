@@ -30,7 +30,6 @@ function Table (props: SearchProps) {
 
   const fetchData = useCallback( async () =>
   {
-    useMemo(async () => {
     try {
       const response = await fetch('https://express-backend.vercel.app/api/getstats')
       const data = await response.json()
@@ -39,7 +38,6 @@ function Table (props: SearchProps) {
     } catch (error) {
       console.log('Error', error)
       }
-    }, [])
   }, [])
 
   useEffect(() => {
