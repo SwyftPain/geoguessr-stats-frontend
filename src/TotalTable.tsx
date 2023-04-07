@@ -105,7 +105,7 @@ function Table (props: SearchProps) {
                   <i className='normal silver user icon'></i>{' '}
                   {isMobile ? 'User' : 'Username'}:
                 </th>
-                <th colSpan={3} style={{ pointerEvents: 'none' }}>
+                <th colSpan={2} style={{ pointerEvents: 'none' }}>
                   <i className='normal silver list icon'></i>
                   Score:
                 </th>
@@ -133,7 +133,6 @@ function Table (props: SearchProps) {
             <tfoot>
               <tr>
                 <th>{results.length} players</th>
-                <th></th>
                 <th></th>
                 <th></th>
               </tr>
