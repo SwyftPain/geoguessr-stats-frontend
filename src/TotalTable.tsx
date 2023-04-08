@@ -33,15 +33,15 @@ function Table (props: SearchProps) {
       const response = await fetch('https://express-backend.vercel.app/api/getstats')
       const data = await response.json()
       const userStats = data.reduce((acc: any, row: any) => {
-        if (!acc[row.user]) {
-          acc[row.user] = {
+        if (!acc[row.discordid]) {
+          acc[row.discordid] = {
             user: row.user,
             wins: row.wins,
             losses: row.losses
           }
         } else {
-          acc[row.user].wins += row.wins
-          acc[row.user].losses += row.losses
+          acc[row.discordid].wins += row.wins
+          acc[row.discordid].losses += row.losses
         }
         return acc
       }, {} )
