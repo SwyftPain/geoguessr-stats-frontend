@@ -71,7 +71,7 @@ useEffect(() => {
 
   const filteredResults = useMemo(() => {
     return results.filter(row => {
-      return row.user.toLowerCase().includes(searchValue!.toLowerCase())
+      return row.user.toLowerCase().includes(searchValue!.toLowerCase()) || row.discordid.toLowerCase().includes(searchValue!.toLowerCase())
     })
   }, [results, searchValue])
 
