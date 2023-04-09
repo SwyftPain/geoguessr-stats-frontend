@@ -103,6 +103,10 @@ useEffect(() => {
             <thead>
               <tr>
                 <th rowSpan={2} className='collapsing descending'>
+                  <i className='normal silver list icon'></i>{' '}
+                  {isMobile ? 'Id' : 'Id'}:
+                </th>
+                <th rowSpan={2} className='collapsing descending'>
                   <i className='normal silver user icon'></i>{' '}
                   {isMobile ? 'User' : 'Username'}:
                 </th>
@@ -125,6 +129,7 @@ useEffect(() => {
             <tbody>
               {(searchValue ? filteredResults : currentResults).map(row => (
                 <tr key={row.id}>
+                  <td>{row.id}</td>
                   <td>{row.user}</td>
                   <td>{row.wins}</td>
                   <td>{row.losses}</td>
@@ -134,6 +139,7 @@ useEffect(() => {
             <tfoot>
               <tr>
                 <th>{results.length} players</th>
+                <th></th>
                 <th></th>
                 <th></th>
               </tr>
