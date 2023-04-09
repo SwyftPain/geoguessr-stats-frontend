@@ -35,6 +35,7 @@ function Table (props: SearchProps) {
       const userStats = data.reduce((acc: any, row: any) => {
         if (!acc[row.discordid]) {
           acc[row.discordid] = {
+		id: row.id,
             user: row.user,
             wins: row.wins,
             losses: row.losses
