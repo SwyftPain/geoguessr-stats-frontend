@@ -91,6 +91,10 @@ function Table (props: SearchProps) {
             <thead>
               <tr>
                 <th rowSpan={2} className='collapsing descending'>
+                  <i className='normal silver list icon'></i>{' '}
+                  {isMobile ? 'Id' : 'Id'}:
+                </th>
+                <th rowSpan={2} className='collapsing descending'>
                   <i className='normal silver user icon'></i>{' '}
                   {isMobile ? 'User' : 'Username'}:
                 </th>
@@ -117,6 +121,7 @@ function Table (props: SearchProps) {
             <tbody>
               {(searchValue ? filteredResults : currentResults).map(row => (
                 <tr key={row.id}>
+                  <td>{row.id}</td>
                   <td>{row.user}</td>
                   <td>{howLongAgo(row.date)}</td>
                   <td>{row.wins}</td>
@@ -127,6 +132,7 @@ function Table (props: SearchProps) {
             <tfoot>
               <tr>
                 <th>{uniquePlayers.size} players</th>
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
