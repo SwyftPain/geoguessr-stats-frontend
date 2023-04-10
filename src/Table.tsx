@@ -29,7 +29,7 @@ function Table (props: SearchProps) {
   }, [])
 
   const fetchData = async () => {
-      const response = await fetch('http://api.swyftpain.co.uk/api/getstats')
+      const response = await fetch('https://api.swyftpain.co.uk/api/getstats')
       const data = await response.json()
       setResults(data)
       setLoading(false)
