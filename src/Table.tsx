@@ -28,17 +28,12 @@ function Table (props: SearchProps) {
     }
   }, [])
 
-  const fetchData = useCallback( async () =>
-  {
-    try {
+  const fetchData = async () => {
       const response = await fetch('https://express-backend.vercel.app/api/getstats')
       const data = await response.json()
       setResults(data)
       setLoading(false)
-    } catch (error) {
-      console.log('Error', error)
-      }
-  }, [])
+  }
 
   useEffect(() => {
     fetchData()

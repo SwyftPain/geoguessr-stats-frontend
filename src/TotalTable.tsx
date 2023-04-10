@@ -27,9 +27,8 @@ function Table (props: SearchProps) {
     }
   }, [])
 
-  const fetchData = useCallback( async () =>
+  const fetchData = async () =>
   {
-    try {
       const response = await fetch('https://express-backend.vercel.app/api/getstats')
       const data = await response.json()
       const userStats = data.reduce((acc: any, row: any) => {
@@ -52,10 +51,7 @@ function Table (props: SearchProps) {
       setResults(userStatsArray as mysql.RowDataPacket[])
 
       setLoading(false)
-    } catch (error) {
-      console.log('Error', error)
-      }
-  }, [])
+  }
 
 useEffect(() => {
   fetchData()
