@@ -59,13 +59,6 @@ function Table (props: SearchProps) {
 
 useEffect(() => {
   fetchData()
-    useMemo(async () => {
-      try {
-        await fetchData()
-      } catch (error) {
-        console.log('Error', error)
-      }
-    }, [fetchData])
 }, [fetchData])
 
   const filteredResults = useMemo(() => {
