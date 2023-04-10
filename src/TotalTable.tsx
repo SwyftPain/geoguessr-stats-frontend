@@ -59,7 +59,6 @@ function Table (props: SearchProps) {
 
 useEffect(() => {
   fetchData()
-  setInterval(() => {
     useMemo(async () => {
       try {
         await fetchData()
@@ -67,7 +66,6 @@ useEffect(() => {
         console.log('Error', error)
       }
     }, [fetchData])
-  }, 60000)
 }, [fetchData])
 
   const filteredResults = useMemo(() => {

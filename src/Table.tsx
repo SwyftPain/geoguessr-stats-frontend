@@ -42,7 +42,6 @@ function Table (props: SearchProps) {
 
   useEffect(() => {
     fetchData()
-    setInterval(() => {
     useMemo(async () => {
       try {
         await fetchData()
@@ -50,7 +49,6 @@ function Table (props: SearchProps) {
         console.log('Error', error)
       }
     }, [ fetchData ] )
-    }, 60000)
   }, [fetchData])
 
   results.forEach((row: mysql.RowDataPacket) => {
